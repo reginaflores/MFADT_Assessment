@@ -21,7 +21,6 @@
   h3 { font-size:18px; color:var(--red); margin:1.6em 0 .4em; }
   h4 { font-size:15px; margin:1.2em 0 .3em; }
   p { margin:.7em 0; }
-  /* All content links: red marker that floods up to a full red overlay on hover */
   .wrap a {
     color:var(--red); text-decoration:none; font-weight:700;
     padding:0 5px; border-radius:4px;
@@ -63,13 +62,7 @@
   </div>
 </div>
 <style>
-#pwgate {
-  position: fixed; inset: 0;
-  background: #ffffff;
-  display: flex; align-items: center; justify-content: center;
-  z-index: 9999;
-  font-family: 'Neue Haas Grotesk Display Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
-}
+#pwgate { position: fixed; inset: 0; background: #ffffff; display: flex; align-items: center; justify-content: center; z-index: 9999; font-family: 'Neue Haas Grotesk Display Pro','Helvetica Neue',Helvetica,Arial,sans-serif; }
 #pwgate.hidden { display: none; }
 .pwgate-card { max-width: 440px; width: 100%; padding: 40px; border-top: 5px solid #000; }
 .pwgate-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.22em; color: #E5301F; margin-bottom: 20px; }
@@ -85,8 +78,6 @@ body.locked .banner, body.locked main { visibility: hidden; }
 </style>
 <script>
 (function() {
-  // Soft client-side password check. NOT secure — anyone who views source
-  // can read the content + the password. Stops casual visitors only.
   document.body.classList.add('locked');
   const PW = 'mfadt2026';
   const STORAGE_KEY = 'mfadt-pw-ok';
@@ -94,17 +85,9 @@ body.locked .banner, body.locked main { visibility: hidden; }
   const form = document.getElementById('pwgate-form');
   const input = document.getElementById('pwgate-input');
   const err = document.getElementById('pwgate-error');
-  function unlock() {
-    gate.classList.add('hidden');
-    document.body.classList.remove('locked');
-    try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
-  }
+  function unlock() { gate.classList.add('hidden'); document.body.classList.remove('locked'); try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {} }
   try { if (sessionStorage.getItem(STORAGE_KEY) === '1') unlock(); } catch (e) {}
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    if (input.value === PW) { err.hidden = true; unlock(); }
-    else { err.hidden = false; input.select(); }
-  });
+  form.addEventListener('submit', e => { e.preventDefault(); if (input.value === PW) { err.hidden = true; unlock(); } else { err.hidden = false; input.select(); } });
 })();
 </script>
 
@@ -121,12 +104,11 @@ body.locked .banner, body.locked main { visibility: hidden; }
 <ul>
 <li><strong>Program identity (the root issue).</strong> Resolve "who we think we are vs. what students want us to be" — the MFA-vs-STEM mismatch — rather than letting each course negotiate it alone. It underlies most of the tensions below.</li>
 <li><strong>Career pathways</strong> read as "deeply indirect and vague" — students want real-client work, internships, alumni access, portfolio translation, and honest career guidance.</li>
-<li><strong>AI</strong> is the cohort-defining topic and has no deliberate curricular home; employers ask graduates about their AI workflow in every job interview.</li>
+<li><strong>AI</strong> has no deliberate curricular home; employers ask graduates about their AI workflow in every job interview.</li>
 <li><strong>Visual/communication design fundamentals</strong> (typography, layout, presentation) have no required place — "design thinking perspective, but not good design perspective."</li>
 <li><strong>Depth and tiering</strong> — experienced students exhaust the advanced offerings while novices struggle in one-size-fits-all requirements; both point to leveling, not uniform difficulty.</li>
 <li><strong>Structural friction</strong> — first-semester overload, a redundant seminar sequence (CPS), section inconsistency, facility bottlenecks, and graduate scholarship funding (the root of the cohort's monoculture).</li>
 </ul>
-<p><strong>Who acts.</strong> Most high-leverage moves are within the department's control — course-level fixes, a program-level AI stance, and the Cloud Salon career reframe. The structural levers — graduate scholarship funding, faculty research support, alumni-network policy, and marketing/admissions alignment with the program's MFA identity — require the Provost's Office. On the graduating work, the faculty rubric rates <strong>concept and point of view as the cohort's strengths</strong> and <strong>secondary research as the weakest dimension</strong>; faculty also observed craft underperforming at the show without that showing up on the assessment forms — a calibration question the department should examine.</p>
 <hr />
 <p><strong>Evidence base:</strong> 37 student interviews (17 Major Studio 2 and 20 Thesis 2) and the faculty oral-presentation rubric results (cohort n=73). Quotes are verbatim; students are anonymous and are <em>not</em> linked to identifiable thesis projects anywhere in this report.</p>
 <p><strong>Interactive dashboard:</strong> the underlying coded interview data — sentiment by course, theme frequencies, and per-student detail — is browsable at the <a href="https://reginaflores.github.io/MFADT_Assessment/">MFADT Student Assessment Dashboard</a>.</p>
@@ -137,7 +119,7 @@ body.locked .banner, body.locked main { visibility: hidden; }
 <h3>What did they get out of it?</h3>
 <p>The verdict is <strong>overwhelmingly positive — but for a different thing than many came for</strong>. The program reliably delivers a transformation in <em>how students think</em>: "my entire thought process has changed... that's the most impactful thing I got out of dt." Students who changed direction mid-program consistently describe that as the program working, not failing. The most-credited mechanism is not any single course but <strong>faculty contact</strong> — mentorship, critique, introductions, career advice — named in five of seven interview sets as mattering more than the assignments themselves. Concrete capacities transferred visibly into work: xFab's making-mindset and CC Lab's creative coding show up directly in MS2 finals and thesis projects, and the faculty rubric found <strong>89% of the cohort (65/73) met the program learning outcome</strong>, with 40% exceeding and 11% not meeting on the average dimension. The honest caveat: conceptual transfer is more reliable than tool-skill transfer ("I know how everything works conceptually... but I cannot physically do [it] myself"), and outcomes like an IBM UX internship and a Cornell PhD placement coexist with graduates still seeking direction in May.</p>
 <h3>Was anything missing — and what would students suggest going forward?</h3>
-<p>Five gaps recur across both cohorts. (1) <strong>Career pathways are "deeply indirect and vague"</strong> — students want visible pipelines: real-client work, internships, alumni access, portfolio translation, and honesty about money. (2) <strong>No deliberate curricular stance on AI</strong> — every interview touched it; employers ask about AI workflow in every job interview, while program treatment is ad hoc and faculty signals contradict each other section to section. (3) <strong>Visual/communication design fundamentals</strong> — "design thinking perspective, but not good design perspective"; typography, layout, and presentation skills have no required home. (4) <strong>Depth and tiering</strong> — experienced students run out of advanced courses while novices drown in one-size-fits-all requirements; both point to leveling, not uniform difficulty. (5) <strong>Structural friction</strong> — first-semester overload, redundant seminars, section inconsistency, facility bottlenecks, and scholarship funding (the root cause of the cohort's monoculture, and for at least one student, the only real problem with the program). The deeper recommendation beneath all five: resolve "who we think we are vs. what students want us to be" — the MFA-vs-STEM identity question — explicitly rather than letting each course negotiate it alone.</p>
+<p>Five gaps recur across both cohorts. (1) <strong>Career pathways are "deeply indirect and vague"</strong> — students want visible pipelines: real-client work, internships, alumni access, portfolio translation, and honesty about money. (2) <strong>No deliberate curricular stance on AI</strong> — employers ask about AI workflow in every job interview, while program treatment is ad hoc and faculty signals contradict each other section to section. (3) <strong>Visual/communication design fundamentals</strong> — "design thinking perspective, but not good design perspective"; typography, layout, and presentation skills have no required home. (4) <strong>Depth and tiering</strong> — experienced students run out of advanced courses while novices drown in one-size-fits-all requirements; both point to leveling, not uniform difficulty. (5) <strong>Structural friction</strong> — first-semester overload, redundant seminars, section inconsistency, facility bottlenecks, and scholarship funding (the root cause of the cohort's monoculture, and for at least one student, the only real problem with the program). The deeper recommendation beneath all five: resolve "who we think we are vs. what students want us to be" — the MFA-vs-STEM identity question — explicitly rather than letting each course negotiate it alone.</p>
 <hr />
 <h2>2. Graduating Class Work Review (<a href="https://parsons.edu/dt-2026/">Flux 2026</a>)</h2>
 <h3>2.1 Faculty oral-presentation rubric results (n=73)</h3>
