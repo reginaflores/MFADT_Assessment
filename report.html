@@ -30,10 +30,16 @@
     -webkit-print-color-adjust:exact; print-color-adjust:exact;
   }
   .wrap a:hover, .wrap a:focus { background-size:100% 100%; color:#fff; }
+  .q { color:var(--red); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
   code { background:var(--sand); padding:1px 5px; border-radius:3px; font-size:13px; font-family:Consolas,Menlo,monospace; }
   blockquote { margin:1em 0; padding:.6em 1.1em; background:var(--offwhite); border-left:4px solid var(--red); color:var(--muted); font-style:italic; }
   blockquote p { margin:.2em 0; }
   ul,ol { padding-left:1.4em; } li { margin:.35em 0; }
+  .wrap ol { padding-left:1.7em; margin:1em 0; }
+  .wrap ol > li { margin:0 0 1em; padding-left:.35em; }
+  .wrap ol > li::marker { font-weight:700; color:var(--red); }
+  .wrap ol p { margin:0; }
+  .wrap ol ul { margin:.6em 0 .2em; }
   hr { border:none; border-top:1px solid var(--sand); margin:2em 0; }
   table { border-collapse:collapse; width:100%; margin:1.2em 0; font-size:14.5px; }
   th,td { border:1px solid #e3d7d5; padding:8px 11px; text-align:left; vertical-align:top; }
@@ -98,9 +104,15 @@ body.locked .banner, body.locked main { visibility: hidden; }
 <main><div class="wrap">
 <h2>Executive Summary</h2>
 <p>The assessment was built around the three questions put to students in their interviews. The short answers:</p>
-<p><strong>1. What were students hoping to get out of MFADT?</strong> Students arrived with three overlapping aims: a <strong>professional upgrade</strong> (converting prior experience — UX, graphic design, architecture, fashion, CS, film, fine art — into a more employable, technology-fluent practice), <strong>exploration beyond the screen</strong> (physical, spatial, and computational range), and a <strong>credential and foothold</strong> in New York — with a notable subset seeking shelter from labor-market shocks (games-industry layoffs, the film-industry collapse, AI-weakened design hiring). The defining tension begins here: many expected a technical, career-pipeline program, but MFADT is a concept-driven, experimental MFA — a marketed-vs-actual identity mismatch that sits upstream of the curriculum.</p>
-<p><strong>2. What did students get out of it?</strong> <strong>Overwhelmingly positive</strong> — though often for something other than what students came for. The program reliably transforms <em>how students think</em>, and even those who pivoted mid-program count that as success. Its single greatest asset is <strong>faculty contact</strong> — mentorship and critique matter more to students than any specific course or assignment. The faculty oral-presentation rubric found <strong>89% of the graduating cohort (65 of 73) met the program learning outcome</strong> (40% exceeding). The honest caveat: conceptual growth transfers more reliably than hands-on tool skill, and strong outcomes (an IBM UX internship, a Cornell PhD placement) coexist with graduates still seeking direction at graduation.</p>
-<p><strong>3. Was anything missing — and what would students suggest going forward?</strong> Five gaps recur, beneath which sits one strategic question:</p>
+<ol>
+<li>
+<p><strong class="q" style="color:#E82E21">What were students hoping to get out of MFADT?</strong> Students arrived with three overlapping aims: a <strong>professional upgrade</strong> (converting prior experience — UX, graphic design, architecture, fashion, CS, film, fine art — into a more employable, technology-fluent practice), <strong>exploration beyond the screen</strong> (physical, spatial, and computational range), and a <strong>credential and foothold</strong> in New York — with a notable subset seeking shelter from labor-market shocks (games-industry layoffs, the film-industry collapse, AI-weakened design hiring). The defining tension begins here: many expected a technical, career-pipeline program, but MFADT is a concept-driven, experimental MFA — a marketed-vs-actual identity mismatch that sits upstream of the curriculum.</p>
+</li>
+<li>
+<p><strong class="q" style="color:#E82E21">What did students get out of it?</strong> <strong>Overwhelmingly positive</strong> — though often for something other than what students came for. The program reliably transforms <em>how students think</em>, and even those who pivoted mid-program count that as success. Its single greatest asset is <strong>faculty contact</strong> — mentorship and critique matter more to students than any specific course or assignment. The faculty oral-presentation rubric found <strong>89% of the graduating cohort (65 of 73) met the program learning outcome</strong> (40% exceeding). The honest caveat: conceptual growth transfers more reliably than hands-on tool skill, and strong outcomes (an IBM UX internship, a Cornell PhD placement) coexist with graduates still seeking direction at graduation.</p>
+</li>
+<li>
+<p><strong class="q" style="color:#E82E21">Was anything missing — and what would students suggest going forward?</strong> Five gaps recur, beneath which sits one strategic question:</p>
 <ul>
 <li><strong>Program identity (the root issue).</strong> Resolve "who we think we are vs. what students want us to be" — the MFA-vs-STEM mismatch — rather than letting each course negotiate it alone. It underlies most of the tensions below.</li>
 <li><strong>Career pathways</strong> read as "deeply indirect and vague" — students want real-client work, internships, alumni access, portfolio translation, and honest career guidance.</li>
@@ -109,6 +121,8 @@ body.locked .banner, body.locked main { visibility: hidden; }
 <li><strong>Depth and tiering</strong> — experienced students exhaust the advanced offerings while novices struggle in one-size-fits-all requirements; both point to leveling, not uniform difficulty.</li>
 <li><strong>Structural friction</strong> — first-semester overload, a redundant seminar sequence (CPS), section inconsistency, facility bottlenecks, and graduate scholarship funding (the root of the cohort's monoculture).</li>
 </ul>
+</li>
+</ol>
 <hr />
 <p><strong>Evidence base:</strong> 37 student interviews (17 Major Studio 2 and 20 Thesis 2) and the faculty oral-presentation rubric results (cohort n=73). Quotes are verbatim; students are anonymous and are <em>not</em> linked to identifiable thesis projects anywhere in this report.</p>
 <p><strong>Interactive dashboard:</strong> the underlying coded interview data — sentiment by course, theme frequencies, and per-student detail — is browsable at the <a href="https://reginaflores.github.io/MFADT_Assessment/">MFADT Student Assessment Dashboard</a>.</p>
@@ -174,12 +188,12 @@ body.locked .banner, body.locked main { visibility: hidden; }
 <p><strong>Met PLO: 65 of 73 (89%).</strong></p>
 <p>Reading the faculty's own numbers: <strong>concept and point of view are the cohort's strengths</strong> (Unique POV is the only dimension where "Exceeds" is the most common rating), while <strong>Secondary Research is the weakest dimension</strong> (12 "Doesn't Meet" — double the concept figure) and <strong>Form/Technology/Iteration is second-weakest</strong> (11). On the faculty forms, craft does <em>not</em> stand out as the failure point (7 "Doesn't Meet") — which is exactly the discrepancy flagged in the June 4 meeting: the observed under-performance of craft at the show is not reflected in the assessment forms. Either the forms are calibrated generously on craft, or "Craft, Scope &amp; Dev" bundles too much into one line to catch finish quality.</p>
 <h3>2.2 Faculty Thesis Project Review</h3>
-<p>Beyond the oral-presentation rubric, full-time faculty reviewed the graduating thesis projects directly. The qualitative observations:</p>
+<p>Beyond the oral-presentation rubric, full-time faculty reviewed the graduating thesis projects directly — <strong>a sample of 59 projects, not the full cohort</strong>. Across that sample, the qualitative observations:</p>
 <ul>
 <li><strong>Concept — genuine breadth.</strong> The program is exploring a real range in <em>what</em> students investigate, not only what or how they make.</li>
 <li><strong>Research — highly uneven depth.</strong> Research depth varies dramatically. Several projects reference major theoretical frameworks (Maslow, Winnicott, Buddhist philosophy, the neurodiversity paradigm) as a single touchpoint rather than a body of literature the student has moved through — the name is dropped to legitimize the concept, with no evidence of sustained engagement. This echoes the rubric's weakest dimension (Secondary Research, §2.1).</li>
 <li><strong>AI — substantive but unevenly transparent.</strong> Several projects use AI substantively, with varying transparency — reinforcing the program-level case for an AI use-and-disclosure norm (§3).</li>
-<li><strong>Assessment quality — concept ≠ documentation.</strong> Conceptual strength and documentation quality don't always correlate (noted in 30 of 59 projects): strong ideas are sometimes thinly documented, and polished documentation sometimes wraps a thinner concept — consistent with the craft-calibration question in §2.1.</li>
+<li><strong>Assessment quality — concept ≠ documentation.</strong> Conceptual strength and documentation quality don't always correlate — they diverged in 30 of the 59 projects reviewed: strong ideas are sometimes thinly documented, and polished documentation sometimes wraps a thinner concept — consistent with the craft-calibration question in §2.1.</li>
 </ul>
 <hr />
 <h2>3. Course-Level Sentiment &amp; Recommendations (the actionable layer)</h2>
