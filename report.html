@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MFADT Curriculum Assessment — Department Synthesis Report</title>
+<style>
+  :root { --red:#E82E21; --ink:#212121; --muted:#5A4A4A; --offwhite:#FCF6F5; --sand:#EFE3E1; }
+  * { box-sizing:border-box; }
+  body { margin:0; color:var(--ink); background:var(--offwhite);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Calibri,Helvetica,Arial,sans-serif;
+    line-height:1.6; font-size:16px; }
+  .banner { background:var(--red); color:#fff; padding:40px 7vw 34px;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .banner .kicker { font-size:12px; letter-spacing:3px; text-transform:uppercase; font-weight:700; opacity:.92; margin:0 0 12px; }
+  .banner h1 { font-family:Georgia,"Times New Roman",serif; font-size:30px; font-weight:700; margin:0; line-height:1.2; }
+  main { background:#fff; margin:-18px auto 60px; max-width:1040px;
+    box-shadow:0 2px 18px rgba(0,0,0,.07); border-radius:4px; }
+  .wrap { padding:30px 6vw 50px; }
+  h2,h3,h4 { font-family:Georgia,"Times New Roman",serif; color:var(--ink); line-height:1.25; }
+  h2 { font-size:23px; margin:2.2em 0 .6em; padding-top:.6em; border-top:3px solid var(--sand); }
+  h2:first-child { border-top:none; padding-top:0; margin-top:.3em; }
+  h3 { font-size:18px; color:var(--red); margin:1.6em 0 .4em; }
+  h4 { font-size:15px; margin:1.2em 0 .3em; }
+  p { margin:.7em 0; }
+  /* All content links: red marker that floods up to a full red overlay on hover */
+  .wrap a {
+    color:var(--red); text-decoration:none; font-weight:700;
+    padding:0 5px; border-radius:4px;
+    background-image:linear-gradient(var(--red),var(--red));
+    background-repeat:no-repeat; background-position:0 100%; background-size:100% 16%;
+    transition:background-size .3s cubic-bezier(.4,0,.2,1), color .2s ease .05s;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .wrap a:hover, .wrap a:focus { background-size:100% 100%; color:#fff; }
+  code { background:var(--sand); padding:1px 5px; border-radius:3px; font-size:13px; font-family:Consolas,Menlo,monospace; }
+  blockquote { margin:1em 0; padding:.6em 1.1em; background:var(--offwhite); border-left:4px solid var(--red); color:var(--muted); font-style:italic; }
+  blockquote p { margin:.2em 0; }
+  ul,ol { padding-left:1.4em; } li { margin:.35em 0; }
+  hr { border:none; border-top:1px solid var(--sand); margin:2em 0; }
+  table { border-collapse:collapse; width:100%; margin:1.2em 0; font-size:14.5px; }
+  th,td { border:1px solid #e3d7d5; padding:8px 11px; text-align:left; vertical-align:top; }
+  thead th { background:var(--red); color:#fff; font-family:Georgia,serif; font-weight:700; border-color:var(--red);
+    -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  tbody tr:nth-child(even) { background:var(--offwhite); }
+  em { color:var(--muted); }
+  @media print {
+    body { background:#fff; font-size:11.5pt; }
+    main { box-shadow:none; margin:0; }
+    h2 { page-break-after:avoid; } table,blockquote { page-break-inside:avoid; }
+  }
+</style></head>
+<body>
+<!-- Password gate (soft client-side check; not real security) -->
+<div id="pwgate">
+  <div class="pwgate-card">
+    <div class="pwgate-eyebrow">Parsons — MFADT Curriculum Assessment</div>
+    <h1 class="pwgate-title">Password required</h1>
+    <p class="pwgate-lede">This report contains anonymized but sensitive curriculum-assessment data. Enter the access password to view.</p>
+    <form id="pwgate-form" autocomplete="off">
+      <input id="pwgate-input" type="password" placeholder="Password" autofocus>
+      <button type="submit">Unlock &rarr;</button>
+    </form>
+    <p id="pwgate-error" class="pwgate-error" hidden>Incorrect password.</p>
+  </div>
+</div>
+<style>
+#pwgate {
+  position: fixed; inset: 0;
+  background: #ffffff;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9999;
+  font-family: 'Neue Haas Grotesk Display Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+#pwgate.hidden { display: none; }
+.pwgate-card { max-width: 440px; width: 100%; padding: 40px; border-top: 5px solid #000; }
+.pwgate-eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.22em; color: #E5301F; margin-bottom: 20px; }
+.pwgate-title { font-size: 36px; line-height: 1.05; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 14px; }
+.pwgate-lede { color: #6b6b6b; font-size: 14px; line-height: 1.55; margin: 0 0 24px; }
+#pwgate-form { display: flex; gap: 0; border: 1px solid #000; }
+#pwgate-input { flex: 1; border: 0; padding: 12px 14px; font: inherit; font-size: 14px; outline: none; }
+#pwgate-form button { background: #000; color: #fff; border: 0; padding: 12px 18px; font: inherit; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; cursor: pointer; }
+#pwgate-form button:hover { background: #E5301F; }
+.pwgate-error { color: #E5301F; font-size: 12px; margin-top: 12px; font-weight: 700; letter-spacing: 0.02em; }
+body.locked { overflow: hidden; }
+body.locked .banner, body.locked main { visibility: hidden; }
+</style>
+<script>
+(function() {
+  // Soft client-side password check. NOT secure — anyone who views source
+  // can read the content + the password. Stops casual visitors only.
+  document.body.classList.add('locked');
+  const PW = 'mfadt2026';
+  const STORAGE_KEY = 'mfadt-pw-ok';
+  const gate = document.getElementById('pwgate');
+  const form = document.getElementById('pwgate-form');
+  const input = document.getElementById('pwgate-input');
+  const err = document.getElementById('pwgate-error');
+  function unlock() {
+    gate.classList.add('hidden');
+    document.body.classList.remove('locked');
+    try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+  }
+  try { if (sessionStorage.getItem(STORAGE_KEY) === '1') unlock(); } catch (e) {}
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (input.value === PW) { err.hidden = true; unlock(); }
+    else { err.hidden = false; input.select(); }
+  });
+})();
+</script>
+
+<header class="banner">
+  <p class="kicker">Parsons School of Design &middot; The New School</p>
+  <h1>MFADT Curriculum Assessment — Department Synthesis Report</h1>
+</header>
+<main><div class="wrap">
+<h2>Executive Summary</h2>
+<p>The assessment was built around the three questions put to students in their interviews. The short answers:</p>
+<p><strong>1. What were students hoping to get out of MFADT?</strong> Students arrived with three overlapping aims: a <strong>professional upgrade</strong> (converting prior experience — UX, graphic design, architecture, fashion, CS, film, fine art — into a more employable, technology-fluent practice), <strong>exploration beyond the screen</strong> (physical, spatial, and computational range), and a <strong>credential and foothold</strong> in New York — with a notable subset seeking shelter from labor-market shocks (games-industry layoffs, the film-industry collapse, AI-weakened design hiring). The defining tension begins here: many expected a technical, career-pipeline program, but MFADT is a concept-driven, experimental MFA — a marketed-vs-actual identity mismatch that sits upstream of the curriculum.</p>
+<p><strong>2. What did students get out of it?</strong> <strong>Overwhelmingly positive</strong> — though often for something other than what students came for. The program reliably transforms <em>how students think</em>, and even those who pivoted mid-program count that as success. Its single greatest asset is <strong>faculty contact</strong> — mentorship and critique matter more to students than any specific course or assignment. The faculty oral-presentation rubric found <strong>89% of the graduating cohort (65 of 73) met the program learning outcome</strong> (40% exceeding). The honest caveat: conceptual growth transfers more reliably than hands-on tool skill, and strong outcomes (an IBM UX internship, a Cornell PhD placement) coexist with graduates still seeking direction at graduation.</p>
+<p><strong>3. Was anything missing — and what would students suggest going forward?</strong> Five gaps recur, beneath which sits one strategic question:</p>
+<ul>
+<li><strong>Program identity (the root issue).</strong> Resolve "who we think we are vs. what students want us to be" — the MFA-vs-STEM mismatch — rather than letting each course negotiate it alone. It underlies most of the tensions below.</li>
+<li><strong>Career pathways</strong> read as "deeply indirect and vague" — students want real-client work, internships, alumni access, portfolio translation, and honest career guidance.</li>
+<li><strong>AI</strong> is the cohort-defining topic and has no deliberate curricular home; employers ask graduates about their AI workflow in every job interview.</li>
+<li><strong>Visual/communication design fundamentals</strong> (typography, layout, presentation) have no required place — "design thinking perspective, but not good design perspective."</li>
+<li><strong>Depth and tiering</strong> — experienced students exhaust the advanced offerings while novices struggle in one-size-fits-all requirements; both point to leveling, not uniform difficulty.</li>
+<li><strong>Structural friction</strong> — first-semester overload, a redundant seminar sequence (CPS), section inconsistency, facility bottlenecks, and graduate scholarship funding (the root of the cohort's monoculture).</li>
+</ul>
+<p><strong>Who acts.</strong> Most high-leverage moves are within the department's control — course-level fixes, a program-level AI stance, and the Cloud Salon career reframe. The structural levers — graduate scholarship funding, faculty research support, alumni-network policy, and marketing/admissions alignment with the program's MFA identity — require the Provost's Office. On the graduating work, the faculty rubric rates <strong>concept and point of view as the cohort's strengths</strong> and <strong>secondary research as the weakest dimension</strong>; faculty also observed craft underperforming at the show without that showing up on the assessment forms — a calibration question the department should examine.</p>
+<hr />
+<p><strong>Evidence base:</strong> 37 student interviews (17 Major Studio 2 and 20 Thesis 2) and the faculty oral-presentation rubric results (cohort n=73). Quotes are verbatim; students are anonymous and are <em>not</em> linked to identifiable thesis projects anywhere in this report.</p>
+<p><strong>Interactive dashboard:</strong> the underlying coded interview data — sentiment by course, theme frequencies, and per-student detail — is browsable at the <a href="https://reginaflores.github.io/MFADT_Assessment/">MFADT Student Assessment Dashboard</a>.</p>
+<hr />
+<h2>1. The Three Questions (big picture — summary)</h2>
+<h3>What were students hoping to get out of MFADT?</h3>
+<p>Students arrived with three overlapping motivations. First, a <strong>professional upgrade</strong>: a large share — particularly international students and career-changers — expected a UX/product-design-flavored program that would convert prior experience (UX, graphic design, architecture, fashion, CS, film, fine art) into a more employable, technology-fluent practice. Second, <strong>exploration beyond the screen</strong>: many came explicitly to escape "being stuck in the figma files all day" — to gain physical, spatial, and computational range they couldn't get at work or in undergrad. Third, a <strong>credential and a foothold</strong>: a terminal degree, New York, networks, and for a notable subset, shelter from labor-market shocks (games-industry layoffs, the post-COVID film collapse, design hiring weakened by AI — one student enrolled after watching a colleague's job "being advertised and replaced in real time"). The mismatch between the program's marketed identity (tech/UX-adjacent, STEM-designated) and its actual identity (experimental, concept-driven MFA) is the single most consequential expectation issue, and it begins upstream of the curriculum — in admissions, marketing, and recruiting.</p>
+<h3>What did they get out of it?</h3>
+<p>The verdict is <strong>overwhelmingly positive — but for a different thing than many came for</strong>. The program reliably delivers a transformation in <em>how students think</em>: "my entire thought process has changed... that's the most impactful thing I got out of dt." Students who changed direction mid-program consistently describe that as the program working, not failing. The most-credited mechanism is not any single course but <strong>faculty contact</strong> — mentorship, critique, introductions, career advice — named in five of seven interview sets as mattering more than the assignments themselves. Concrete capacities transferred visibly into work: xFab's making-mindset and CC Lab's creative coding show up directly in MS2 finals and thesis projects, and the faculty rubric found <strong>89% of the cohort (65/73) met the program learning outcome</strong>, with 40% exceeding and 11% not meeting on the average dimension. The honest caveat: conceptual transfer is more reliable than tool-skill transfer ("I know how everything works conceptually... but I cannot physically do [it] myself"), and outcomes like an IBM UX internship and a Cornell PhD placement coexist with graduates still seeking direction in May.</p>
+<h3>Was anything missing — and what would students suggest going forward?</h3>
+<p>Five gaps recur across both cohorts. (1) <strong>Career pathways are "deeply indirect and vague"</strong> — students want visible pipelines: real-client work, internships, alumni access, portfolio translation, and honesty about money. (2) <strong>No deliberate curricular stance on AI</strong> — every interview touched it; employers ask about AI workflow in every job interview, while program treatment is ad hoc and faculty signals contradict each other section to section. (3) <strong>Visual/communication design fundamentals</strong> — "design thinking perspective, but not good design perspective"; typography, layout, and presentation skills have no required home. (4) <strong>Depth and tiering</strong> — experienced students run out of advanced courses while novices drown in one-size-fits-all requirements; both point to leveling, not uniform difficulty. (5) <strong>Structural friction</strong> — first-semester overload, redundant seminars, section inconsistency, facility bottlenecks, and scholarship funding (the root cause of the cohort's monoculture, and for at least one student, the only real problem with the program). The deeper recommendation beneath all five: resolve "who we think we are vs. what students want us to be" — the MFA-vs-STEM identity question — explicitly rather than letting each course negotiate it alone.</p>
+<hr />
+<h2>2. Graduating Class Work Review (<a href="https://parsons.edu/dt-2026/">Flux 2026</a>)</h2>
+<h3>2.1 Faculty oral-presentation rubric results (n=73)</h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Exceeds</th>
+<th>Meets</th>
+<th>Doesn't Meet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conceptual Strength</td>
+<td>28</td>
+<td>38</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Unique Point of View</td>
+<td>36</td>
+<td>30</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Secondary Research</td>
+<td>18</td>
+<td>42</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Form, Technology, Iteration</td>
+<td>22</td>
+<td>39</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Craft, Scope &amp; Dev</td>
+<td>22</td>
+<td>43</td>
+<td>7</td>
+</tr>
+<tr>
+<td><strong>Average</strong></td>
+<td><strong>29 (40%)</strong></td>
+<td><strong>36 (49%)</strong></td>
+<td><strong>8 (11%)</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Met PLO: 65 of 73 (89%).</strong></p>
+<p>Reading the faculty's own numbers: <strong>concept and point of view are the cohort's strengths</strong> (Unique POV is the only dimension where "Exceeds" is the most common rating), while <strong>Secondary Research is the weakest dimension</strong> (12 "Doesn't Meet" — double the concept figure) and <strong>Form/Technology/Iteration is second-weakest</strong> (11). On the faculty forms, craft does <em>not</em> stand out as the failure point (7 "Doesn't Meet") — which is exactly the discrepancy flagged in the June 4 meeting: the observed under-performance of craft at the show is not reflected in the assessment forms. Either the forms are calibrated generously on craft, or "Craft, Scope &amp; Dev" bundles too much into one line to catch finish quality.</p>
+<hr />
+<h2>3. Course-Level Sentiment &amp; Recommendations (the actionable layer)</h2>
+<p><em>Each entry: what students said (verified against transcripts), then the change they proposed. Counts refer to the 37-student interview corpus.</em></p>
+<h3>xFab Lab</h3>
+<p><strong>Sentiment:</strong> the most-discussed course in the corpus and its most reliable growth story — with a structural complaint attached to nearly every compliment. Four of five students in one MS2 folder named it (or its final project) their top growth contributor; the recurring arc is "stressful in the moment, valuable in retrospect." It is the gateway from digital/screen backgrounds into physical making ("There's something cool about like working with actual circuits. It's unaiable [un-AI-able]"), and for students from resource-scarce contexts, transformative access. The complaint, voiced in six of seven folders: <strong>one-medium-per-week is too fast to learn anything deeply</strong> ("half the time I was just spending the time just learning how to do it"), units feel arbitrary to career goals for some ("I didn't move here to make things out of cardboard"), and the same week is too shallow for craft-experienced students while overwhelming digital-background classmates.</p>
+<p><strong>Student-proposed changes:</strong> student-selected medium tracks (choose 2–3, month-long cycles instead of week sprints); or split the course into analog-craft and digital-fabrication strands; give each material more time; move/lengthen the physical-computing module (currently one late week, instructor-dependent across the four-way section split). Nobody asked for xFab to disappear — keep the low-stakes hands-on ethos.</p>
+<h3>xFab Lecture, CC Lecture, Cloud Salon (the online lecture block)</h3>
+<p><strong>Sentiment:</strong> the weakest element of the required sequence, criticized in four folders with no defenders of the current format: "I don't think I gleaned anything from the lecture portion"; "the lecture was terrible... way too not focused on the actual material"; "we forgot everything when actually in the lab class"; "I didn't pay this much money to attend a lot of classes on Zoom." Lecture content drifts from lab content, and the block contributes to a first-semester load students describe as six credits of time for three credits of value.</p>
+<p><strong>Student-proposed changes:</strong> merge each lecture into its lab (same day, integrated) or cut it; if a lecture survives, make it shorter and tightly coupled to what the lab is doing that week. This is also where the first-semester overload is most cheaply relieved.</p>
+<h3>Critical Computation Lab</h3>
+<p><strong>Sentiment:</strong> the single most-cited skills revelation for non-coders — "I didn't realize you could be so creative with coding"; "I don't have a separate developer. I do it all myself. I think that changes a lot for me" — and simultaneously a one-size-fits-none leveling failure reported in five folders. Too basic for CS-background students ("I literally learned it back in high school"), too fast for novices ("just drag us to the function itself, instead of telling us what is the logic"), with a documented consequence: novices AI-ing their way through without comprehension, then hitting walls later ("something breaks with their code... they don't know how to fix it"). One graduating student questioned p5.js itself as the vehicle ("I know JavaScript rather than I know p5"). Counterpoint for balance: some experienced coders found it a fine refresher, and its instructors are praised.</p>
+<p><strong>Student-proposed changes:</strong> tiered sections by prior experience (the single most-converged-on fix in the corpus); teach logic before functions; consider plain JS/HTML/CSS or multiple languages alongside p5; rebalance so instruction lives in the lecture (or fold lecture into lab); adopt the AI guardrails some computing instructors already use (use AI to enhance, but comment your code and explain your reasoning) as standard practice.</p>
+<h3>Creative Practice Seminar 1 &amp; 2</h3>
+<p><strong>Sentiment:</strong> the most-named elimination candidate — in six of seven folders (the exception being one MS2 set) — but the critique is precise, not dismissive: <strong>redundancy and unclear purpose</strong>, not worthless content. Students present "almost the same thing two days in a row to the same exact people" (CPS vs. Major Studio); CPS content is "covered again in the thesis studio, thesis writing session"; the course "was quickly bouncing between supporting major studio and also the cloud salon... I just lost what it actually meant." What students <em>defend</em>: the design manifesto ("forced me to be like, What does design mean to me?"), thesis-topic discovery, the thesis-paper preparation, the zine assignment, and — repeatedly — the CPS faculty themselves. Several students declined to eliminate anything at all; one offered the elective <em>Poetics of Matter</em> as the model: "if CPS was taught that way... I will get to where I am today, a semester earlier."</p>
+<p><strong>Student-proposed changes:</strong> consolidate to one stronger seminar; co-plan the syllabus with Major Studio sections so presentations don't duplicate; reposition it research-forward (notable given Secondary Research is the cohort's weakest rubric dimension — CPS is the natural home for fixing that); preserve the manifesto and thesis-prep outcomes.</p>
+<h3>Cloud Salon</h3>
+<p><strong>Sentiment:</strong> students see it as interesting but not consequential — it appears in interviews mostly inside the lecture-overload complaint and the career-prep gap ("Cloud Salon is interesting but is not funneling students into concrete job opportunities"). The alumni sessions draw the best feedback of any salon content.</p>
+<p><strong>Recommended change (already in motion, per June 4):</strong> reframe it as exposure to <em>ways of building a working life</em> rather than a job pipeline — fall: FTF on how they built their careers; spring: alumni journeys. Pair it with the concrete career mechanics students asked for elsewhere (resume/portfolio clinics in or alongside thesis).</p>
+<h3>Major Studio 1</h3>
+<p><strong>Sentiment:</strong> the mentorship engine — "what was most meaningful and impactful for me was the professors for my major studio classes... That was my major breakthrough." Its iterate-and-feedback structure builds critique resilience, and its milestone scaffolding is preferred over MS2's looseness. The "Five and Five" rapid-prototyping assignment is the most-praised single assignment in the corpus ("that's something which I would want to see more often"). Two cautions: the <em>Instruction Sets for Strangers</em> assignment read as "tone deaf" to at least one student given a largely international cohort (with uncomfortable classroom moments going unaddressed); and instructor-fit matters enormously — one experienced student spent MS1 mentoring time "repeatedly justifying her project choices rather than getting feedback," a mismatch she traced to sections mixing career-changers with students straight from undergrad.</p>
+<p><strong>Student-proposed changes:</strong> keep the milestone structure and rapid-cycle assignments; publish <strong>instructor profiles (background, expertise, teaching style) before section selection</strong> — students currently rely on peer gossip and LinkedIn; review Instruction Sets for cultural framing; attend to ESL classroom dynamics (one student described being the only one speaking while classmates conferred in Mandarin — a cohesion problem, not a discipline one).</p>
+<h3>Major Studio 2</h3>
+<p><strong>Sentiment:</strong> the freedom is the point and students know it ("you can do whatever you want, and they're helping you to achieve that") — but MS2 is where the structure complaints concentrate. Students asked for <em>more</em> discipline, earlier deadlines, and more assignments; the semester-long single-project model invites stretching ("I'm going to stretch this out"); scheduled work sessions go underused while blocking elective slots ("loosey goosey"); sections diverge in expectations and progress, which breaks CPS coordination and makes cross-section peer review shallow; and the MS→thesis purpose is not explicit ("you should have some kind of polished prototype project that is an exploration of what you could do in thesis. So because that was unclear to me, I don't think it was really that helpful"). The transition from scaffolded first semester to self-directed second semester is a cliff for some ("I felt lost... I kind of felt like I failed at it").</p>
+<p><strong>Student-proposed changes:</strong> shared syllabus expectations across sections (assignments are already shared; align pacing, final-presentation format, and peer-review practice); state the thesis-ideation purpose on day one; midterm finished-output checkpoints; use freed work-session time deliberately (provocations, structured studio time) or release it for electives.</p>
+<h3>Thesis Studio 1 &amp; 2</h3>
+<p><strong>Sentiment:</strong> lighter coverage, but consistent: prototyping starts too late in Thesis 1 ("if I started prototyping earlier... I would have something much stronger right now"); the structure can feel rigidly linear for non-linear processes; thesis-writing instruction duplicates CPS; and the <strong>Thesis 1 → Thesis 2 advisor handoff "wastes a month having to re-get somebody on the boat."</strong> Positives: named alongside Major Studio as most helpful by some; individual thesis faculty's reference/research scaffolding is praised.</p>
+<p><strong>Student-proposed changes:</strong> advisor continuity across the year (or a deliberate, documented handoff); pull prototyping forward (import the Five-and-Five ethos); deduplicate writing instruction with CPS; given Secondary Research is the weakest rubric dimension, make research methods an explicit thesis-year thread (one HCI-bound student noted no one at the university tutoring center specializes in the kind of research writing the work demands).</p>
+<h3>Electives, AI offerings, and the depth problem</h3>
+<p><strong>Sentiment:</strong> electives are where much of the reported growth happens (Unity, Poetics of Matter, Digital Dialects, the ML/AI courses, cross-school courses at Lang/Performing Arts) — and that is itself the finding: <strong>the required core is too generic for the experienced and the electives that fix it are scarce</strong> (single sections, once-a-year, capacity-limited, fall slots blocked by required labs). Experienced students "run out of courses to take." The AI electives are consistently praised; capacity, not quality, is the constraint.</p>
+<p><strong>Student-proposed changes:</strong> tiering ("creative coding one, two, three"); more sections of the high-demand electives; graduate access to making/shop courses; recommended (non-binding) course tracks per career goal; instructor-profile transparency extended to electives.</p>
+<h3>Cross-course: the AI stance</h3>
+<p>Every interview touched AI. The student consensus is mature — tool for coding/debugging/ideation, not a generator of creative work; authorship must stay with the designer — but the program's treatment is inconsistent: some computing courses have good guardrails; studio and conceptual courses mostly have silence ("people seem afraid of talking about it... AI is either fully accepted without discussion or vaguely discouraged, with nothing in between"); faculty signals contradict each other across sections (and some students praised exactly that guidance — the inconsistency is the finding). The employability stakes are explicit: "every time in interviews, they ask you... what is your workflow? And those kind of topics do not get acknowledged in DT." <strong>Recommendation:</strong> a deliberate, program-level stance — require students to critically justify AI use rather than ban or ignore it; integrate workflow/ethics/data-provenance treatment into existing courses (a standalone tool class risks instant obsolescence, per students themselves); expand the praised AI electives; align faculty messaging. A Design &amp; Technology program, as one student put it, should be leading on this.</p>
+</div></main>
+</body></html>

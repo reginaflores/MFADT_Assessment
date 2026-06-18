@@ -1,25 +1,29 @@
-# MFADT Curriculum Assessment Dashboard
+# MFADT Curriculum Assessment
 
-A static, self-contained HTML dashboard summarizing findings from the **MFA Design & Technology (MFADT)** curriculum assessment at Parsons School of Design — covering the 2025–2026 academic year, in its fourth year since the last major curriculum change.
+Static, self-contained HTML deliverables from the **MFA Design & Technology (MFADT)** curriculum assessment at Parsons School of Design — covering the 2025–2026 academic year, in its fourth year since the last major curriculum change.
 
 ## What's here
 
-Just one file: `index.html`. The dashboard is a single-page static site with all data embedded inline (no external dependencies, no backend, no API calls). It works offline.
+- `index.html` — the **interactive dashboard** (course sentiment, themes, per-student matrix, verbatim quotes).
+- `report.html` — the **Department Synthesis Report** (the granular written findings and course-level recommendations).
 
-## Live dashboard
+Both are single-page static files with everything embedded inline (no dependencies, no backend) and work offline.
 
-The live version is published via GitHub Pages: [view the dashboard](https://reginaflores.github.io/MFADT_Assessment/).
+## Live links
+
+- Dashboard: [reginaflores.github.io/MFADT_Assessment](https://reginaflores.github.io/MFADT_Assessment/)
+- Report: [reginaflores.github.io/MFADT_Assessment/report.html](https://reginaflores.github.io/MFADT_Assessment/report.html)
 
 ## Access
 
-The page is password-protected with a soft client-side gate. Contact the project owner if you need the password.
+Both pages sit behind the same soft client-side password gate (one unlock covers both in a session). Contact the project owner if you need the password.
 
 ## About the data
 
-- **37 student interviews** (17 MS2, 20 TS2) conducted across 8 PTF interviewers
-- Student identifiers in the visible dashboard are anonymized to `MS2-NN` / `TS2-NN`
+- **37 student interviews** (17 Major Studio 2, 20 Thesis 2)
+- Student identifiers are anonymized to `MS2-NN` / `TS2-NN`; quotes are not linked to identifiable thesis projects
 - The dashboard surfaces course sentiment, most-named coursework, AI in the program, faculty as program value, career & post-grad readiness, resource requests, topic-browseable verbatim quotes, single-voice outliers, and a per-student matrix
 
 ## Project context
 
-This assessment was conducted by full-time and part-time faculty in the MFADT program. It includes student surveys, student interviews, oral presentations, and a synthesis phase. The dashboard summarizes the **interview** track.
+Conducted by full-time and part-time faculty in the MFADT program. The evidence base is **student interviews** and the **faculty oral-presentation rubric** (n=73), reviewed together in a synthesis phase. (A student survey was originally planned but scrapped — only alumni responded.)
